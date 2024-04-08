@@ -1,1 +1,46 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --accent-font: 'PressStart2P-Regular';
+    --main-font: 'Inter-Variable', sans-serif;
+    --title-text-weight: 700;
+    --main-text-weight: 400;
+    --title-text:  var(--title-text-weight) 18px/21.78px var(--main-font);
+    --main-text:  var(--main-text-weight) 18px/21px var(--main-font);
+    --background-color: rgba(255, 255, 255, 1);
+    --main-color: rgba(0, 0, 0, 1);
+}
+
+:root.theme-light {
+    --accent-font: 'PressStart2P-Regular';
+    --main-font: 'Inter-Variable', sans-serif;
+    --title-text-weight: 700;
+    --main-text-weight: 400;
+    --title-text:  var(--title-text-weight) 18px/21.78px var(--main-font);
+    --main-text:  var(--main-text-weight) 18px/21px var(--main-font);
+    --background-color: rgba(255, 255, 255, 1);
+    --main-color: rgba(0, 0, 0, 1);
+}
+
+:root.theme-dark {
+    --accent-font: 'PressStart2P-Regular';
+    --main-font: 'Inter-Variable', sans-serif;
+    --title-text-weight: 785;
+    --main-text-weight: 465;
+    --title-text:  var(--title-text-weight) 18px/21.78px var(--main-font);
+    --main-text:  var(--main-text-weight) 18px/21px var(--main-font);
+    --background-color: rgba(0, 0, 0, 1);
+    --main-color: rgba(0, 204, 20, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent-font: 'PressStart2P-Regular';
+        --main-font: 'Inter-Variable', sans-serif;
+        --title-text-weight: 785;
+        --main-text-weight: 465;
+        --title-text:  var(--title-text-weight) 18px/21.78px var(--main-font);
+        --main-text:  var(--main-text-weight) 18px/21px var(--main-font);
+        --background-color: rgba(0, 0, 0, 1);
+        --main-color: rgba(0, 204, 20, 1);
+    }
+}

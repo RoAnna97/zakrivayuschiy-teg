@@ -17,4 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font: var(--main-text);
+  color: var(--main-color);
+  background-color: var(--background-color);
 }
