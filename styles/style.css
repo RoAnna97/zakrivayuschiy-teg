@@ -21,3 +21,10 @@
   color: var(--main-color);
   background-color: var(--background-color);
 }
+
+.header {
+  background-image: 
+    repeating-linear-gradient(90deg, var(--gradient-color-one), transparent 2px),
+    repeating-linear-gradient(var(--gradient-color-one), transparent 2px),
+    linear-gradient(var(--gradient-color-two), var(--gradient-color-three));
+}
