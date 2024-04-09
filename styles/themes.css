@@ -31,7 +31,6 @@
     --gradient-color-one: #000;
     --gradient-color-two: #007f0c;
     --gradient-color-three: #004306;
-
 }
 
 @media (prefers-color-scheme: dark) {

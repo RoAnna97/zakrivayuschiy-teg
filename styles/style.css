@@ -6,7 +6,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -20,11 +19,196 @@
   font: var(--main-text);
   color: var(--main-color);
   background-color: var(--background-color);
+    background-image: 
+    repeating-linear-gradient(to right, var(--gradient-color-one), transparent 2px),
+    repeating-linear-gradient(to bottom, var(--gradient-color-one), transparent 2px),
+    linear-gradient(to bottom, var(--gradient-color-two) 0.01%, var(--gradient-color-three));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font: var(--main-text);
+  color: var(--main-color);
 }
 
 .header {
-  background-image: 
-    repeating-linear-gradient(90deg, var(--gradient-color-one), transparent 2px),
-    repeating-linear-gradient(var(--gradient-color-one), transparent 2px),
-    linear-gradient(var(--gradient-color-two), var(--gradient-color-three));
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  align-items: stretch;
+  padding: 14px 25px;
+  height: fit-content;
+  background-color: var(--background-color);
+  border: solid 2px var(--main-color);
+  font-family: var(--accent-font);
+  margin-bottom: 100px;
+}
+
+.logo-group {
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  color: var(--main-color);
+}
+
+.header-subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.header__theme-menu {
+  grid-row: 3 / 4;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.theme-menu__button {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.theme-menu__button:disabled {
+  opacity:60%;
+  position: relative;
+}
+
+/* TODO: анимировать */
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -11px;
+  width: 14px;
+  height: 100%;
+}
+
+.main {
+  display: grid;
+  justify-items: stretch;
+  align-items: start;
+  gap: 50px;
+}
+
+.card {
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--background-color);
+  border: solid 2px var(--main-color);
+  
+}
+
+.card__title {
+  display: flex;
+  padding: 0 10px;
+  width: 100%;
+  font: var(--title-text);
+  justify-content: flex-start;
+	align-items: center;
+  height: fit-content;
+  background-clip: content-box;
+
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: clip;
+  border-top: solid 2px var(--main-color);
+  border-bottom: solid 2px var(--main-color);
+}
+
+.image-two {
+  filter: grayscale(75%) brightness(50%);
+}
+
+.image-three {
+  filter: saturate(300%);
+}
+
+.image-four {
+  filter: hue-rotate(30deg);
+}
+
+.image-five {
+  filter: invert(80%);
+}
+
+.image-six {
+  filter: sepia(90%);
+}
+
+.image-seven {
+  filter: blur(5px);
+}
+
+.image-eight {
+  filter: hue-rotate(86deg) contrast(45%) blur(1px) saturate(1.5);
+}
+
+.card__content {
+  display: grid;
+  padding: 25px;
+  gap: 25px;
+  width: 100%;
+}
+
+.card__description {
+  display: grid;
+  gap: 27px;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-self: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  gap: 12px;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.like-icon {
+  fill: var(--main-color);
+}
+
+.card__like-button {
+  border: none;
+  outline: solid 2px var(--main-color);
+  width: 130px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  background-color: transparent;
 }
