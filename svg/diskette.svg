@@ -1,11 +1,7 @@
 <svg width="40" height="40" viewBox="0 0 40 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                fill: rgba(0, 204, 20, 1);
-        }
-    }
-    </style>
+    <symbol id="diskette" viewBox="0 0 40 40"
+        stroke="currentColor"
+        fill="currentColor">
 <rect x="0.5" y="0.5" width="3" height="3" fill="black"/>
 <rect x="0.5" y="3.5" width="3" height="3" fill="black"/>
 <rect x="0.5" y="6.5" width="3" height="3" fill="black"/>

@@ -30,44 +30,55 @@
   padding-bottom: 100px;
   font: var(--main-text);
   color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-section {
+  width: var(--width-content-section);
+}
+
+@media (768px <= width) {
+  :root {
+    --width-content-section: 50vw;
+  }
 }
 
 .header {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
-  align-items: stretch;
-  padding: 14px 25px;
+  grid-template-rows: 2fr 1fr;
+  gap: 25px;
+  padding: 25px 0;
   height: fit-content;
   background-color: var(--background-color);
   border: solid 2px var(--main-color);
   font-family: var(--accent-font);
   margin-bottom: 100px;
+  justify-items: center;
+  align-items: end;
 }
 
 .logo-group {
-  grid-row: 2 / 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
+  grid-template-rows: minmax(49px, max-content) minmax(14px, max-content);
   gap: 20px;
 }
 
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  color: var(--main-color);
-}
-
-.header-subtitle {
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   color: var(--main-color);
   text-transform: uppercase;
 }
 
-.header__theme-menu {
-  grid-row: 3 / 4;
+.header-subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  color: var(--main-color);
+  text-transform: uppercase;
 }
 
 .theme-menu__list {
@@ -211,4 +222,25 @@
   font-weight: var(--main-text-weight);
   line-height: 12.6px;
   background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  padding: 50px 35px 0;
+  justify-content: center;
+}
+
+.footer__button {
+  border: none;
+  outline: solid 2px var(--main-color);
+  background-color: var(--background-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
