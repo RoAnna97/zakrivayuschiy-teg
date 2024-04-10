@@ -226,7 +226,7 @@
 
 .footer {
   display: flex;
-  padding: 50px 35px 0;
+  padding: 50px 34.5px 0;
   justify-content: center;
 }
 
@@ -234,13 +234,26 @@
   border: none;
   outline: solid 2px var(--main-color);
   background-color: var(--background-color);
-  font-family: var(--accent-font);
-  font-size: 14px;
-  font-weight: var(--main-text-weight);
-  line-height: 12.6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 15px 20px;
+  gap: 8px;
+}
+
+.diskette-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--main-color);
+  stroke: var(--main-color);
+}
+
+.footer__button-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  color: var(--main-color);
 }
