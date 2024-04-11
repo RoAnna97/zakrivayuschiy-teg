@@ -6,7 +6,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -17,4 +16,288 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font: var(--main-text);
+  color: var(--main-color);
+  background-color: var(--background-color);
+  background-image: 
+    repeating-linear-gradient(to right, var(--gradient-color-one), transparent 2px),
+    repeating-linear-gradient(to bottom, var(--gradient-color-one), transparent 2px),
+    linear-gradient(to bottom, var(--gradient-color-two) 0.01%, var(--gradient-color-three));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font: var(--main-text);
+  color: var(--main-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-section {
+  width: var(--width-content-section);
+}
+
+@media (768px <= width) {
+  :root {
+    --width-content-section: 50vw;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 25px;
+  padding: 60px 0 25px;
+  height: fit-content;
+  background-color: var(--background-color);
+  border: solid 2px var(--main-color);
+  font-family: var(--accent-font);
+  margin-bottom: 100px;
+  justify-items: center;
+  align-items: end;
+}
+
+.logo-group {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: minmax(49px, max-content) minmax(14px, max-content);
+  gap: 20px;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  color: var(--main-color);
+}
+
+.header-subtitle {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.theme-menu__button {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 14px;
+  text-transform: uppercase;
+}
+
+.theme-menu__button:disabled {
+  opacity:60%;
+  position: relative;
+}
+
+/* TODO: анимировать */
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -11px;
+  width: 14px;
+  height: 100%;
+}
+
+.main {
+  display: grid;
+  justify-items: stretch;
+  align-items: start;
+  gap: 50px;
+}
+
+.card {
+  display: grid;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--background-color);
+  border: solid 2px var(--main-color);
+  
+}
+
+.card__title {
+  display: flex;
+  padding: 0 10px;
+  width: 100%;
+  font: var(--title-text);
+  justify-content: flex-start;
+	align-items: center;
+  height: fit-content;
+  background-clip: content-box;
+  border-bottom: solid 2px var(--main-color);
+
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: right;
+  overflow: clip;
+}
+
+.lable {
+  z-index: 1;
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 14px;
+  color: var(--main-color);
+  text-align: right;
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 1px 0 var(--background-color), -1px -1px 0 var(--background-color), 1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color);
+  opacity: 0.5;
+}
+
+@media (768px <= width) {
+  .lable {
+    right: 25px;
+  }
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+} 
+
+.image-two {
+  filter: grayscale(80%) brightness(130%) contrast(95%);
+}
+
+.image-three {
+  filter: saturate(300%);
+}
+
+.image-four {
+  filter: hue-rotate(30deg);
+}
+
+.image-five {
+  filter: invert(80%);
+}
+
+.image-six {
+  filter: sepia(90%);
+}
+
+.image-seven {
+  filter: blur(5px);
+}
+
+.image-eight {
+  filter: hue-rotate(86deg) contrast(45%) blur(1px) saturate(1.5);
+}
+
+.card__content {
+  display: grid;
+  padding: 25px;
+  gap: 25px;
+  width: 100%;
+  border-top: solid 2px var(--main-color);
+}
+
+.card__description {
+  display: grid;
+  gap: 27px;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-self: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  gap: 12px;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.like-icon {
+  fill: var(--main-color);
+}
+
+.card__like-button {
+  border: none;
+  outline: solid 2px var(--main-color);
+  width: 130px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  background-color: transparent;
+}
+
+.footer {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+.footer__button {
+  border: none;
+  outline: solid 2px var(--main-color);
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 15px 20px;
+  gap: 8px;
+}
+
+.diskette-icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--main-color);
+  stroke: var(--main-color);
+}
+
+.footer__button-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  color: var(--main-color);
+}
+
+@media (768px <= width) {
+  .footer__button {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding: 15px 20px;
+  }
+  
+  .diskette-icon {
+    width: 21px;
+    height: 21px;
+  }
 }
