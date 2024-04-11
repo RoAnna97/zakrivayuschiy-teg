@@ -19,7 +19,7 @@
   font: var(--main-text);
   color: var(--main-color);
   background-color: var(--background-color);
-    background-image: 
+  background-image: 
     repeating-linear-gradient(to right, var(--gradient-color-one), transparent 2px),
     repeating-linear-gradient(to bottom, var(--gradient-color-one), transparent 2px),
     linear-gradient(to bottom, var(--gradient-color-two) 0.01%, var(--gradient-color-three));
@@ -50,7 +50,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: 2fr 1fr;
   gap: 25px;
-  padding: 25px 0;
+  padding: 60px 0 25px;
   height: fit-content;
   background-color: var(--background-color);
   border: solid 2px var(--main-color);
@@ -71,7 +71,6 @@
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   color: var(--main-color);
-  text-transform: uppercase;
 }
 
 .header-subtitle {
@@ -86,7 +85,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  gap: 14px;
+  gap: 4px;
 }
 
 .theme-menu__button {
@@ -137,21 +136,50 @@
 	align-items: center;
   height: fit-content;
   background-clip: content-box;
+  border-bottom: solid 2px var(--main-color);
 
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: right;
+  overflow: clip;
+}
+
+.lable {
+  z-index: 1;
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 14px;
+  color: var(--main-color);
+  text-align: right;
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 1px 0 var(--background-color), -1px -1px 0 var(--background-color), 1px -1px 0 var(--background-color), -1px 1px 0 var(--background-color);
+  opacity: 0.5;
+}
+
+@media (768px <= width) {
+  .lable {
+    right: 25px;
+  }
 }
 
 .card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  overflow: clip;
-  border-top: solid 2px var(--main-color);
-  border-bottom: solid 2px var(--main-color);
-}
+  object-position: right;
+} 
 
 .image-two {
-  filter: grayscale(75%) brightness(50%);
+  filter: grayscale(80%) brightness(130%) contrast(95%);
 }
 
 .image-three {
@@ -183,6 +211,7 @@
   padding: 25px;
   gap: 25px;
   width: 100%;
+  border-top: solid 2px var(--main-color);
 }
 
 .card__description {
@@ -226,7 +255,7 @@
 
 .footer {
   display: flex;
-  padding: 50px 34.5px 0;
+  padding-top: 50px;
   justify-content: center;
 }
 
@@ -238,7 +267,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: max-content;
   padding: 15px 20px;
   gap: 8px;
 }
@@ -256,4 +285,19 @@
   font-weight: var(--main-text-weight);
   line-height: 12.6px;
   color: var(--main-color);
+}
+
+@media (768px <= width) {
+  .footer__button {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    padding: 15px 20px;
+  }
+  
+  .diskette-icon {
+    width: 21px;
+    height: 21px;
+  }
 }
