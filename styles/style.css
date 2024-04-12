@@ -39,12 +39,6 @@
   width: var(--width-content-section);
 }
 
-@media (768px <= width) {
-  :root {
-    --width-content-section: 50vw;
-  }
-}
-
 .header {
   display: grid;
   grid-template-columns: 1fr;
@@ -95,20 +89,47 @@
   font-weight: var(--main-text-weight);
   line-height: 14px;
   text-transform: uppercase;
+  height: max-content;
 }
 
+.theme-menu__button:hover {
+  opacity: 0.6;
+  animation: fadeOut 0.3s ease forwards;
+}
+
+
 .theme-menu__button:disabled {
-  opacity:60%;
+  opacity: 0.6;
+  pointer-events: none;
+  animation: fadeOut 0.3s ease forwards;
   position: relative;
 }
 
-/* TODO: анимировать */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  left: -11px;
+  left: -14px;
   width: 14px;
   height: 100%;
+  animation: slideRight 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0);
+}
+  100% {
+    transform: translateX(4px);
+}
 }
 
 .main {

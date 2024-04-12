@@ -13,3 +13,9 @@
     --gradient-color-three: #1a1a1a;
     --width-content-section: 100%;
 }
+
+@media (width >= 768px) {
+    :root {
+        --width-content-section: 50vw;
+    }
+}
