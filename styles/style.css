@@ -90,6 +90,32 @@
   line-height: 14px;
   text-transform: uppercase;
   height: max-content;
+  position: relative;
+}
+
+.theme-menu__button::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  visibility: hidden;
+}
+
+.theme-menu__button:focus::after {
+  transform: scaleX(1);
+  visibility: visible;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
 }
 
 .theme-menu__button:hover {
@@ -321,4 +347,10 @@
     width: 21px;
     height: 21px;
   }
+}
+
+.card__like-button:focus,
+.footer__button:focus {
+  box-shadow: 2px 2px 0 2px var(--main-color);
+  transition: box-shadow 0.3s ease;
 }
