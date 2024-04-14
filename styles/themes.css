@@ -16,6 +16,7 @@
     --gradient-color-one: #d3d3d3;
     --gradient-color-two: #e7e7e7;
     --gradient-color-three: #1a1a1a;
+    --button-text-color: rgb(255, 255, 255);
 
 }
 
@@ -31,6 +32,7 @@
     --gradient-color-one: #000;
     --gradient-color-two: #007f0c;
     --gradient-color-three: #004306;
+    --button-text-color: rgba(0, 204, 20, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,5 +48,6 @@
         --gradient-color-one: #000;
         --gradient-color-two: #007f0c;
         --gradient-color-three: #004306;
+        --button-text-color: rgba(0, 204, 20, 1);
     }
 }
