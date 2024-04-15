@@ -13,6 +13,7 @@
     --gradient-color-three: #1a1a1a;
     --button-text-color: rgb(255, 255, 255);
     --width-content-section: 100%;
+    --heart-color: red;
 }
 
 @media (width >= 768px) {
