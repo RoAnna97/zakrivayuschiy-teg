@@ -326,7 +326,7 @@
   overflow: hidden;
 }
 
-.diskette-icon {
+.footer__button .diskette-icon {
   width: 28px;
   height: 28px;
   fill: var(--button-text-color);
@@ -361,13 +361,15 @@
 }
 
 .card__like-button:focus-visible,
-.footer__button:focus-visible {
+.footer__button:focus-visible,
+.dialog__button:focus-visible {
   box-shadow: 2px 2px 0 2px var(--main-color);
   transition: box-shadow 0.3s ease;
 }
 
 .card__like-button::after,
-.footer__button::after {
+.footer__button::after,
+.dialog__button::after {
   content: " ";
   position: absolute;
   bottom: 0;
@@ -379,7 +381,8 @@
 }
 
 .card__like-button:hover::after,
-.footer__button:hover::after {
+.footer__button:hover::after,
+.dialog__button:hover::after {
   left: 0;
 }
 
@@ -471,3 +474,71 @@
   }
 }
 
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+}
+
+dialog[open] {
+  display: grid;
+  padding: 30px;
+  gap: 30px;
+  position: fixed;
+  inset: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: var(--background-color);
+  border: solid 2px var(--main-color);
+  height: 191px;
+  min-width: 341px;
+  max-width: var(--dialog-width);
+  overflow: hidden;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 75%;
+}
+
+.dialog__content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.dialog__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 21px;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+
+.dialog__content .diskette-icon {
+  width: 78px;
+  height: 39px;
+  fill: var(--button-text-color);
+  stroke: var(--button-text-color);
+  position: relative;
+  z-index: 3;
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
+}
+
+.dialog__button {
+  border: none;
+  outline: solid 2px var(--main-color);
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-text-weight);
+  line-height: 12.6px;
+  padding: 12.5px 0;
+  text-transform: uppercase;
+}

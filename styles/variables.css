@@ -14,10 +14,13 @@
     --button-text-color: rgb(255, 255, 255);
     --width-content-section: 100%;
     --heart-color: red;
+    --dialog-width-coefficient: 0.909;
+    --dialog-width: calc(100vw * var(--dialog-width-coefficient));
 }
 
 @media (width >= 768px) {
     :root {
         --width-content-section: 50vw;
+        --dialog-width-coefficient: 0.245;
     }
 }
